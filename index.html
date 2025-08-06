@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Build Max Properties</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="icon" type="image/png" href="images/logo-favicon.jpeg" sizes="32x32">
+<link rel="icon" type="image/png" href="images/logo-favicon.jpeg" sizes="16x16">
+<link rel="apple-touch-icon" sizes="180x180" href="images/logo-favicon.jpeg">
+
+<link rel="icon" type="image/png" sizes="192x192" href="images/logo-favicon.jpeg">
+<link rel="icon" type="image/png" sizes="512x512" href="images/logo-favicon.jpeg">
+
+<meta name="msapplication-TileImage" content="images/mstile-150x150.png">
+
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="images/logo-pi.jpeg" alt="Build Max Properties Logo" class="logo-image">
+        <div class="logo-text-container">
+          <!-- <span class="logo-text">Build Max</span>
+          <span class="logo-subtitle">Properties</span> -->
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li class="dropdown">
+          <a href="#mission" class="dropbtn">Services <span class="dropdown-arrow">▾</span></a>
+          <div class="dropdown-content">
+            <a href="#mission">Mission & Vision</a>
+            <a href="#listings">Property Listings</a>
+            <a href="#valuation">Property Valuation</a>
+            <a href="#management">Property Management</a>
+          </div>
+        </li>
+        <li><a href="#listings">Listings</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <img src="images/hero-image.jpg" alt="Luxury Properties" class="hero-background">
+    <div class="hero-content">
+      <h1>Build Max Properties</h1>
+      <p>...Elevating your home experience with tech</p>
+      <a href="#listings" class="btn btn-primary">Explore Properties</a>
+    </div>
+  </header>
+
+  <section class="why-us" id="about">
+    <div class="container">
+      <h2>Why Choose Build Max</h2>
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3>Competitive Pricing</h3>
+          <p>We offer transparent, competitive pricing for premium properties with no hidden fees.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏆</div>
+          <h3>Expert Professionals</h3>
+          <p>Our certified team provides top-tier real estate guidance and personalized support.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Efficient Process</h3>
+          <p>Experience streamlined processes from initial viewing to final closing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mission" id="mission">
+    <div class="container">
+      <div class="mission-content">
+        <div class="mission-item">
+          <h2>Our Mission</h2>
+          <p>To make property ownership accessible and stress-free for all our clients through reliable service, transparent processes, and premium listings that meet diverse needs and budgets.</p>
+        </div>
+        <div class="mission-item">
+          <h2>Our Vision</h2>
+          <p>To be the leading real estate provider in Nigeria, known for trust, professionalism, and excellence in service delivery while setting new standards in the industry.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="listings" id="listings">
+    <div class="container">
+      <h2>Featured Properties</h2>
+      <div class="listing-grid">
+        <div class="listing-card">
+          <img src="images/kolapo-gra-duplex.jpeg" alt="Detached Duplex in Kolapo"/>
+          <div class="listing-info">
+            <h3>₦185M – Kolapo Ishola GRA</h3>
+            <p>4-bedroom detached duplex in a serene mini court.</p>
+            <div class="listing-details">
+              <span>4 beds</span>
+              <span>4 baths</span>
+              <!-- <span>450 sqm</span> -->
+            </div>
+          </div>
+        </div>
+        <div class="listing-card">
+          <img src="images/Osapa-lekki.jpeg" alt="Grande smart home in Lekki"/>
+          <div class="listing-info">
+            <h3>₦1.3B – Osapa, Lekki</h3>
+            <p>Grande 5-bedroom Smart Home with private cinema.</p>
+            <div class="listing-details">
+              <span>5 beds</span>
+              <span>5 baths</span>
+              <!-- <span>280 sqm</span> -->
+            </div>
+          </div>
+        </div>
+        <div class="listing-card">
+          <img src="images/detached-duplex+BQ.jpeg" alt="Semi-detached Duplex in Carlton gate estate, Ibadan."/>
+          <div class="listing-info">
+            <h3>₦180M – Carlton Gate Estate, Ibadan</h3>
+            <p>Contemporary 4-bedroom Semi Detached Duplex with a BQ.</p>
+            <div class="listing-details">
+              <span>4 beds</span>
+              <span>4 baths</span>
+              <!-- <span>320 sqm</span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-cta" id="contact">
+    <div class="container">
+      <h2>Let's Help You Find Your Perfect Home</h2>
+      <p>Have questions or need professional guidance? Our expert team is ready to assist you.</p>
+      <a href="mailto:info@buildmaxproperties.com" class="btn btn-secondary">Contact Our Team</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <img src="images/logo-blackbg.png" alt="Build Max Properties Logo" class="footer-logo-image">
+            <div class="footer-logo-text">
+              <!-- <span class="logo-text">Build Max</span>
+              <span class="logo-subtitle">Properties</span> -->
+            </div>
+          </div>
+          <p>Your trusted partner in finding the perfect property. We specialize in premium real estate solutions across Nigeria.</p>
+         <div class="social-links">
+  <a href="https://www.facebook.com/share/16iRSMs64y/?mibextid=wwXIfr" target="_blank">
+    <i class="fab fa-facebook"></i>
+  </a>
+  <a href="https://wa.me/2348138898679" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://www.instagram.com/build_maxltd?igsh=dTAzMmM1N3ZmejBo&utm_source=qr" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+</div>
+
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#listings">Properties</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#listings">Property Sales</a></li>
+            <li><a href="#listings">Property Rentals</a></li>
+            <li><a href="#valuation">Property Valuation</a></li>
+            <li><a href="#management">Property Management</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <div class="contact-info">
+            <p>📍 Akobo, Ibadan, Nigeria.</p>
+            <p>📞 +234 813 889 8679</p>
+            <p>✉️ buildmaxp@gmail.com</p>
+            <p>🕒 Mon - Fri: 8AM - 6PM<br>Sat: 9AM - 4PM</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Build Max Properties. All rights reserved. | Licensed Real Estate Agency | RC: 7343908</p>
+        <div class="footer-legal">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
