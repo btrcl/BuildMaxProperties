@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Build Max Properties</title>
+  <link rel="stylesheet" href="contact.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="icon" type="image/png" href="images/logo-favicon.jpeg" sizes="32x32">
+  <link rel="icon" type="image/png" href="images/logo-favicon.jpeg" sizes="16x16">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/logo-favicon.jpeg">
+
+  <link rel="icon" type="image/png" sizes="192x192" href="images/logo-favicon.jpeg">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/logo-favicon.jpeg">
+
+  <meta name="msapplication-TileImage" content="images/mstile-150x150.png">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="images/logo-pi.jpeg" alt="Build Max Properties Logo" class="logo-image">
+        <div class="logo-text-container">
+          <!-- <span class="logo-text">Build Max</span>
+          <span class="logo-subtitle">Properties</span> -->
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="dropdown">
+          <a href="#mission" class="dropbtn">Services <span class="dropdown-arrow">▾</span></a>
+          <div class="dropdown-content">
+            <a href="index.html#mission">Mission & Vision</a>
+            <a href="index.html#listings">Property Listings</a>
+            <a href="#valuation">Property Valuation</a>
+            <a href="#management">Property Management</a>
+          </div>
+        </li>
+        <li><a href="index.html#listings">Listings</a></li>
+        <li><a href="#contact" class="active">Contact</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <header class="contact-hero">
+    <div class="hero-overlay"></div>
+    <img src="images/contact-us.jpg" alt="Contact BuildMax Properties" class="hero-background">
+    <div class="hero-content">
+      <h1>Contact Us</h1>
+      <p>Ready to find your dream property? Get in touch with our expert team today.</p>
+    </div>
+  </header>
+
+  <section class="contact-main">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <h2>Get in Touch</h2>
+          <p>We're here to help you with all your real estate needs. Whether you're buying, selling, or just have questions, our professional team is ready to assist you.</p>
+          
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Address</h4>
+                <p>Akobo, Ibadan, Nigeria</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Phone</h4>
+                <p>+234 813 889 8679</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Email</h4>
+                <p>buildmaxp@gmail.com</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Business Hours</h4>
+                <p>Open 24 hours</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-section">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+              <a href="https://www.facebook.com/share/16iRSMs64y/?mibextid=wwXIfr" target="_blank">
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a href="https://wa.me/2348138898679" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a href="https://www.instagram.com/build_maxltd?igsh=dTAzMmM1N3ZmejBo&utm_source=qr" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-section">
+       <form action="https://formspree.io/f/mkgzpjno" method="POST" class="contact-form">
+  <h3>Send us a Message</h3>
+  
+  <div class="form-group">
+    <label for="name">Full Name *</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+  
+  <div class="form-row">
+    <div class="form-group">
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="subject">Subject *</label>
+    <select id="subject" name="subject" required>
+      <option value="">Select a subject</option>
+      <option value="property-inquiry">Property Inquiry</option>
+      <option value="property-valuation">Property Valuation</option>
+      <option value="property-management">Property Management</option>
+      <option value="selling">Selling Property</option>
+      <option value="buying">Buying Property</option>
+      <option value="general">General Inquiry</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="budget">Budget Range (Optional)</label>
+    <select id="budget" name="budget">
+      <option value="">Select budget range</option>
+      <option value="under-50m">Under ₦50M</option>
+      <option value="50m-100m">₦50M - ₦100M</option>
+      <option value="100m-200m">₦100M - ₦200M</option>
+      <option value="200m-500m">₦200M - ₦500M</option>
+      <option value="500m-1b">₦500M - ₦1B</option>
+      <option value="above-1b">Above ₦1B</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="message">Message *</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
+  </div>
+  
+  <!-- Optional: redirect to a thank-you page after submission -->
+  <!-- <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html"> -->
+  
+  <!-- Honeypot field for spam prevention -->
+  <input type="text" name="_gotcha" style="display:none">
+  
+  <button type="submit" class="btn btn-primary">Send Message</button>
+
+  <div id="form-success-message" class="success-message" style="display: none;">
+  ✅ Thank you! Your message has been sent. We'll be in touch shortly.
+</div>
+
+</form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <section class="service-areas">
+  <div class="container">
+    <h2>Our Service Areas</h2>
+    <p class="service-intro">We provide premium real estate services across Nigeria's major cities and growing regions. Our mobile team comes to you for consultations, property viewings, and all your real estate needs.</p>
+    
+    <div class="areas-grid">
+      <div class="area-card">
+        <div class="area-icon">
+          <i class="fas fa-building"></i>
+        </div>
+        <h3>Lagos State</h3>
+        <p>Victoria Island, Lekki, Ikoyi, Ajah, and surrounding premium areas</p>
+        <ul class="area-features">
+          <li>Luxury apartments & penthouses</li>
+          <li>Commercial properties</li>
+          <li>Waterfront developments</li>
+        </ul>
+      </div>
+      
+      <div class="area-card">
+        <div class="area-icon">
+          <i class="fas fa-home"></i>
+        </div>
+        <h3>Oyo State</h3>
+        <p>Carlton Gate, Kolapo Ishola, Jericho, and emerging residential areas</p>
+        <ul class="area-features">
+          <li>Family homes & duplexes</li>
+          <li>Gated communities</li>
+          <li>Service apartments</li>
+        </ul>
+      </div>
+      
+      <div class="area-card">
+        <div class="area-icon">
+          <i class="fas fa-city"></i>
+        </div>
+        <h3>FCT Abuja</h3>
+        <p>Maitama, Asokoro, Wuse, and developing districts</p>
+        <ul class="area-features">
+          <li>Executive residences</li>
+          <li>Investment properties</li>
+          <li>Modern estates</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="mobile-service">
+      <div class="mobile-content">
+        <div class="mobile-icon">
+          <i class="fas fa-car"></i>
+        </div>
+        <div class="mobile-text">
+          <h3>Mobile Consultation Service</h3>
+          <p> We bring our expertise directly to you. Schedule a consultation, property viewing, or valuation at your preferred location.</p>
+          <div class="mobile-features">
+            <span class="feature-badge"><i class="fas fa-check"></i> Free Consultations</span>
+            <span class="feature-badge"><i class="fas fa-check"></i> Property Viewings</span>
+            <span class="feature-badge"><i class="fas fa-check"></i> On-site Valuations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="contact-cta">
+    <div class="container">
+      <h2>Ready to Start Your Property Journey?</h2>
+      <p>Let our experienced team guide you through every step of your real estate transaction.</p>
+      <div class="cta-buttons">
+        <a href="tel:+2348138898679" class="btn btn-primary">Call Now</a>
+        <a href="https://wa.me/2348138898679" class="btn btn-secondary">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <img src="images/logo-blackbg.png" alt="Build Max Properties Logo" class="footer-logo-image">
+            <div class="footer-logo-text">
+              <!-- <span class="logo-text">Build Max</span>
+              <span class="logo-subtitle">Properties</span> -->
+            </div>
+          </div>
+          <p>Your trusted partner in finding the perfect property. We specialize in premium real estate solutions across Nigeria.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/share/16iRSMs64y/?mibextid=wwXIfr" target="_blank">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://wa.me/2348138898679" target="_blank">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/build_maxltd?igsh=dTAzMmM1N3ZmejBo&utm_source=qr" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#listings">Properties</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="index.html#listings">Property Sales</a></li>
+            <li><a href="index.html#listings">Property Rentals</a></li>
+            <li><a href="#valuation">Property Valuation</a></li>
+            <li><a href="#management">Property Management</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <div class="contact-info">
+            <p>📍 Akobo, Ibadan, Nigeria.</p>
+            <p>📞 +234 813 889 8679</p>
+            <p>✉️ buildmaxp@gmail.com</p>
+            <p>🕒 Open 24hrs</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Build Max Properties. All rights reserved. | Licensed Real Estate Developing Agency | RC: 7343908</p>
+        <div class="footer-legal">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="contact.js"></script>
+</body>
+</html>

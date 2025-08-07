@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Build Max Properties</title>
+  <link rel="stylesheet" href="about.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="icon" type="image/png" href="images/logo-favicon.jpeg" sizes="32x32">
+  <link rel="icon" type="image/png" href="images/logo-favicon.jpeg" sizes="16x16">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/logo-favicon.jpeg">
+
+  <link rel="icon" type="image/png" sizes="192x192" href="images/logo-favicon.jpeg">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/logo-favicon.jpeg">
+
+  <meta name="msapplication-TileImage" content="images/mstile-150x150.png">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="images/logo-pi.jpeg" alt="Build Max Properties Logo" class="logo-image">
+        <div class="logo-text-container">
+          <!-- <span class="logo-text">Build Max</span>
+          <span class="logo-subtitle">Properties</span> -->
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li class="dropdown">
+          <a href="#services" class="dropbtn">Services <span class="dropdown-arrow">▾</span></a>
+          <div class="dropdown-content">
+            <a href="index.html#mission">Mission & Vision</a>
+            <a href="index.html#listings">Property Listings</a>
+            <a href="#valuation">Property Valuation</a>
+            <a href="#management">Property Management</a>
+          </div>
+        </li>
+        <li><a href="index.html#listings">Listings</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="hero-overlay"></div>
+    <img src="images/about-pc.webp" alt="About Build Max Properties" class="hero-background">
+    <div class="hero-content">
+      <h1>About BuildMax Properties</h1>
+      <p>Your trusted partner in premium real estate solutions across Nigeria</p>
+    </div>
+  </header>
+
+  <section class="about-intro">
+    <div class="container">
+      <div class="intro-content">
+        <div class="intro-text">
+          <h2>Who We Are</h2>
+          <p>BuildMax Properties is a leading real estate company dedicated to transforming the property ownership experience across Nigeria. With years of expertise in the industry, we specialize in premium residential and commercial properties that meet the diverse needs of our clients.</p>
+          <p>Our commitment to excellence, transparency, and customer satisfaction has established us as a trusted name in the Nigerian real estate market. We leverage technology and innovative approaches to make property transactions seamless and stress-free.</p>
+        </div>
+        <div class="intro-image">
+          <img src="images/deal-pic.jpg" alt="Build Max Properties Team" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mission-vision-expanded">
+    <div class="container">
+      <div class="mv-grid">
+        <div class="mv-card mission-card">
+          <!-- <div class="mv-icon">🎯</div> -->
+          <h3>Our Mission</h3>
+          <p>To make property ownership accessible and stress-free for all our clients through reliable service, transparent processes, and premium listings that meet diverse needs and budgets. We are committed to elevating the home experience with technology and personalized attention.</p>
+        </div>
+        <div class="mv-card vision-card">
+          <!-- <div class="mv-icon">🏆</div> -->
+          <h3>Our Vision</h3>
+          <p>To be the leading real estate provider in Nigeria, known for trust, professionalism, and excellence in service delivery while setting new standards in the industry. We envision a future where every Nigerian can easily find their perfect property match.</p>
+        </div>
+        <div class="mv-card values-card">
+          <!-- <div class="mv-icon">⭐</div> -->
+          <h3>Our Values</h3>
+          <p>Integrity, transparency, innovation, and customer-centricity guide everything we do. We believe in building lasting relationships based on trust and delivering exceptional value to every client we serve.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-choose-us">
+    <div class="container">
+      <h2>Why Choose BuildMax Properties</h2>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">💰</div>
+          <h3>Competitive Pricing</h3>
+          <p>We offer transparent, competitive pricing for premium properties with no hidden fees, ensuring you get the best value for your investment.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🏆</div>
+          <h3>Expert Professionals</h3>
+          <p>Our certified team of real estate professionals provides top-tier guidance and personalized support throughout your property journey.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">⚡</div>
+          <h3>Efficient Process</h3>
+          <p>Experience streamlined processes from initial viewing to final closing, making your property transaction smooth and hassle-free.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔒</div>
+          <h3>Secure Transactions</h3>
+          <p>All our transactions are fully secured with proper documentation and legal compliance, giving you complete peace of mind.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📱</div>
+          <h3>Tech-Enabled</h3>
+          <p>We leverage cutting-edge technology to provide virtual tours, digital documentation, and seamless communication channels.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🤝</div>
+          <h3>Personalized Service</h3>
+          <p>Every client receives tailored attention and customized solutions that match their specific property needs and preferences.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="container">
+      <h2>Meet Our Team</h2>
+      <p class="section-subtitle">Dedicated professionals committed to your success</p>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="images/team-member-1-placeholder.jpg" alt="Team Member" class="member-photo">
+          <div class="member-info">
+            <h3>John Adebayo</h3>
+            <p class="member-role">Managing Director</p>
+            <p class="member-bio">With over 15 years in real estate, John leads our team with expertise in luxury property development and client relations.</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <img src="images/team-member-2-placeholder.jpg" alt="Team Member" class="member-photo">
+          <div class="member-info">
+            <h3>Sarah Okafor</h3>
+            <p class="member-role">Head of Sales</p>
+            <p class="member-bio">Sarah brings 10 years of sales excellence and deep market knowledge to help clients find their perfect properties.</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <img src="images/team-member-3-placeholder.jpg" alt="Team Member" class="member-photo">
+          <div class="member-info">
+            <h3>Michael Taiwo</h3>
+            <p class="member-role">Property Manager</p>
+            <p class="member-bio">Michael ensures all our properties are maintained to the highest standards and provides exceptional tenant support.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="achievements">
+    <div class="container">
+      <h2>Our Achievements</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Properties Sold</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1000+</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Active Listings</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-cta">
+    <div class="container">
+      <h2>Ready to Work With Us?</h2>
+      <p>Let's help you find your perfect property or assist with your real estate needs.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+        <a href="index.html#listings" class="btn btn-secondary">View Properties</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <img src="images/logo-blackbg.png" alt="Build Max Properties Logo" class="footer-logo-image">
+            <div class="footer-logo-text">
+              <!-- <span class="logo-text">Build Max</span>
+              <span class="logo-subtitle">Properties</span> -->
+            </div>
+          </div>
+          <p>Your trusted partner in finding the perfect property. We specialize in premium real estate solutions across Nigeria.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/share/16iRSMs64y/?mibextid=wwXIfr" target="_blank">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://wa.me/2348138898679" target="_blank">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/build_maxltd?igsh=dTAzMmM1N3ZmejBo&utm_source=qr" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#listings">Properties</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="index.html#listings">Property Sales</a></li>
+            <li><a href="index.html#listings">Property Rentals</a></li>
+            <li><a href="#valuation">Property Valuation</a></li>
+            <li><a href="#management">Property Management</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <div class="contact-info">
+            <p>📍 Akobo, Ibadan, Nigeria.</p>
+            <p>📞 +234 813 889 8679</p>
+            <p>✉️ buildmaxp@gmail.com</p>
+            <p>🕒 Open 24hrs</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Build Max Properties. All rights reserved. | Licensed Real Estate Agency | RC: 7343908</p>
+        <div class="footer-legal">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="about.js"></script>
+</body>
+</html>
