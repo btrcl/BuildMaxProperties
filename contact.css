@@ -267,7 +267,7 @@ p {
   text-align: center;
   position: relative;
   overflow: hidden;
-  min-height: 50vh;
+  min-height: 65vh;
 }
 
 .hero-background {
@@ -1045,6 +1045,11 @@ footer {
 
   .contact-main {
     padding: 40px 0;
+  }
+  
+  .contact-text a{
+    color: var(--text-light);
+    text-decoration: none;
   }
 
   .map-section {
