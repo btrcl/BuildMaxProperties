@@ -1,3 +1,45 @@
+// Minimalistic Loading Screen JavaScript
+
+// Function to hide loading screen
+function hideLoadingScreen() {
+    const loadingScreen = document.getElementById('loadingScreen');
+    
+    if (loadingScreen) {
+        // Add fade-out class for smooth transition
+        loadingScreen.classList.add('fade-out');
+        
+        // Remove the loading screen from DOM after fade animation
+        setTimeout(function() {
+            loadingScreen.style.display = 'none';
+        }, 500); // Match the CSS transition duration
+    }
+}
+
+// Show loading screen immediately when script loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Ensure loading screen is visible
+    const loadingScreen = document.getElementById('loadingScreen');
+    if (loadingScreen) {
+        loadingScreen.style.display = 'flex';
+        loadingScreen.style.opacity = '1';
+    }
+});
+
+// Hide loading screen when page is fully loaded
+window.addEventListener('load', function() {
+    // Minimal loading time for clean experience
+    setTimeout(function() {
+        hideLoadingScreen();
+    }, 1000); // Quick 1 second display
+});
+
+// Optional: Hide loading screen if it takes too long (fallback)
+setTimeout(function() {
+    hideLoadingScreen();
+}, 8000); // 8 seconds maximum loading time
+
+
+
 // Mobile Navigation Toggle
 function toggleMenu() {
   const nav = document.getElementById("navLinks");
