@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Property Sales - BuildMax Properties</title>
+  <link rel="stylesheet" href="property-sale.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="icon" type="image/png" href="images/logo-favicon.jpeg" sizes="32x32">
+  <link rel="icon" type="image/png" href="images/logo-favicon.jpeg" sizes="16x16">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/logo-favicon.jpeg">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/logo-favicon.jpeg">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/logo-favicon.jpeg">
+  <meta name="msapplication-TileImage" content="images/mstile-150x150.png">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div class="loading-container" id="loadingScreen">
+    <div class="loading-dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html"><img src="images/logo-pi.jpeg" alt="Build Max Properties Logo" class="logo-image"></a>
+        <div class="logo-text-container">
+          <!-- <span class="logo-text">Build Max</span>
+          <span class="logo-subtitle">Properties</span> -->
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Services <span class="dropdown-arrow">▾</span></a>
+          <div class="dropdown-content">
+            <a href="property-sales.html">Property Sales</a>
+            <a href="#listings">Property Listings</a>
+            <a href="valuation.html">Property Valuation</a>
+            <a href="management.html">Property Management</a>
+          </div>
+        </li>
+        <li><a href="index.html#listings">Listings</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <img src="images/hero-image.jpg" alt="Property Sales" class="hero-background">
+    <div class="hero-content">
+      <h1>Sell Your Property with BuildMax</h1>
+      <p>Get the best market value for your property with our expert sales team and proven marketing strategies</p>
+      <div class="hero-buttons">
+        <a href="valuation.html#valuation-form" class="btn btn-primary">Get Free Valuation</a>
+        <a href="#sales-process" class="btn btn-secondary">Our Process</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sales Overview Section -->
+  <section class="sales-overview">
+    <div class="container">
+      <div class="overview-content">
+        <div class="overview-text">
+          <h2>Why Sell with BuildMax Properties?</h2>
+          <p>With years of experience in the Nigerian real estate market, we understand what it takes to sell your property quickly and at the best possible price. Our comprehensive approach combines market expertise, innovative marketing strategies, and personalized service to ensure your property stands out in the marketplace.</p>
+         
+        </div>
+        <div class="overview-image">
+          <img src="images/kolapo-gra-duplex.jpeg" alt="Sold Property" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sales Services Section -->
+  <section class="sales-services">
+    <div class="container">
+      <h2>Our Comprehensive Sales Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Market Analysis & Pricing</h3>
+          <p>Professional comparative market analysis to determine the optimal listing price for maximum returns and quick sale.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-camera"></i>
+          </div>
+          <h3>Professional Photography</h3>
+          <p>High-quality photography and virtual tours to showcase your property in the best light and attract more buyers.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-bullhorn"></i>
+          </div>
+          <h3>Strategic Marketing</h3>
+          <p>Multi-channel marketing approach including online listings, social media, and our extensive network of buyers.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3>Negotiation Support</h3>
+          <p>Expert negotiation to secure the best possible price and terms while managing all buyer interactions professionally.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-file-contract"></i>
+          </div>
+          <h3>Legal Documentation</h3>
+          <p>Complete handling of all legal paperwork, contracts, and documentation to ensure a smooth transaction process.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>Regular Updates</h3>
+          <p>Weekly progress reports and feedback from viewings to keep you informed throughout the entire sales process.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sales Process Section -->
+  <section class="sales-process" id="sales-process">
+    <div class="container">
+      <h2>Our Proven 6-Step Sales Process</h2>
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Initial Consultation</h3>
+            <p>We meet to discuss your property, timeline, and goals. Our expert conducts a thorough property assessment.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Market Valuation</h3>
+            <p>Comprehensive market analysis to determine the optimal listing price based on current market conditions.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Property Preparation</h3>
+            <p>Professional photography, staging recommendations, and marketing material preparation for maximum appeal.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Marketing Launch</h3>
+            <p>Strategic marketing campaign across multiple channels to reach qualified buyers in our network.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Viewings & Negotiations</h3>
+            <p>Coordinate viewings, manage buyer inquiries, and negotiate offers to secure the best possible terms.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <h3>Closing & Transfer</h3>
+            <p>Handle all legal documentation, coordinate with lawyers, and ensure smooth transfer of ownership.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Property Types Section -->
+  <section class="property-types">
+    <div class="container">
+      <h2>Property Types We Sell</h2>
+      <div class="types-grid">
+        <div class="type-card">
+          <img src="images/kolapo-gra-duplex.jpeg" alt="Residential Properties">
+          <div class="type-info">
+            <h3>Residential Properties</h3>
+            <p>Apartments, duplexes, bungalows, and family homes across Lagos, Ibadan, and major Nigerian cities.</p>
+          </div>
+        </div>
+        <div class="type-card">
+          <img src="images/Osapa-lekki.jpeg" alt="Luxury Properties">
+          <div class="type-info">
+            <h3>Luxury Properties</h3>
+            <p>High-end estates, waterfront properties, and premium developments with exclusive amenities.</p>
+          </div>
+        </div>
+        <div class="type-card">
+          <img src="images/detached-duplex+BQ.jpeg" alt="Commercial Properties">
+          <div class="type-info">
+            <h3>Commercial Properties</h3>
+            <p>Office buildings, retail spaces, warehouses, and investment properties with strong rental yields.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"BuildMax Properties sold my duplex in Lekki within 3 weeks at a price that exceeded my expectations. Their marketing strategy and professional approach made all the difference."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <h4>Mrs. Adebayo Johnson</h4>
+              <span>Property Owner, Lekki</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"The team at BuildMax handled everything from valuation to closing. Their expertise in the Ibadan market helped me get the best possible price for my family home."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <h4>Mr. Olumide Ogundimu</h4>
+              <span>Property Owner, Ibadan</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"Professional, transparent, and results-oriented. BuildMax Properties delivered exactly what they promised. I would highly recommend their services to anyone."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <h4>Dr. Funmi Adeleke</h4>
+              <span>Property Owner, Lagos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Sell Your Property?</h2>
+        <p>Contact our expert sales team today for a free consultation and discover how we can help you achieve the best possible price for your property.</p>
+        <div class="cta-buttons">
+          <a href="tel:+2348138898679" class="btn btn-primary">Call Now</a>
+          <a href="mailto:buildmaxp@gmail.com" class="btn btn-secondary">Email Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <img src="images/logo-blackbg.png" alt="Build Max Properties Logo" class="footer-logo-image">
+            <div class="footer-logo-text">
+              <!-- <span class="logo-text">Build Max</span>
+              <span class="logo-subtitle">Properties</span> -->
+            </div>
+          </div>
+          <p>Your trusted partner in finding the perfect property. We specialize in premium real estate solutions across Nigeria.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/share/16iRSMs64y/?mibextid=wwXIfr" target="_blank">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://wa.me/2348138898679" target="_blank">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/build_maxltd?igsh=dTAzMmM1N3ZmejBo&utm_source=qr" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@buildmaxltd_?_t=ZS-8ygNUWWzo0d&_r=1" target="_blank">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#listings">Properties</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="property-sales.html">Property Sales</a></li>
+            <li><a href="valuation.html">Property Valuation</a></li>
+            <li><a href="management.html">Property Management</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <div class="contact-info">
+            <p>📍 Akobo, Ibadan, Nigeria.</p>
+            <p>📞 +234 813 889 8679</p>
+            <p>✉️ buildmaxp@gmail.com</p>
+            <p>🕒 Open 24hrs</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 BuildMax Properties. All rights reserved. | Licensed Real Estate Developing Agency | RC: 7343908</p>
+        <div class="footer-legal">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="property-sale.js"></script>
+</body>
+</html>

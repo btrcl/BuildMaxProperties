@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Property Management - Build Max Properties</title>
+  <link rel="stylesheet" href="management-style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="icon" type="image/png" href="images/logo-favicon.jpeg" sizes="32x32">
+  <link rel="icon" type="image/png" href="images/logo-favicon.jpeg" sizes="16x16">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/logo-favicon.jpeg">
+
+  <link rel="icon" type="image/png" sizes="192x192" href="images/logo-favicon.jpeg">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/logo-favicon.jpeg">
+
+  <meta name="msapplication-TileImage" content="images/mstile-150x150.png">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div class="loading-container" id="loadingScreen">
+    <div class="loading-dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html"><img src="images/logo-pi.jpeg" alt="Build Max Properties Logo" class="logo-image"></a>
+        <div class="logo-text-container">
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="dropdown">
+          <a href="" class="dropbtn">Services <span class="dropdown-arrow">▾</span></a>
+          <div class="dropdown-content">
+            <a href="property-sale.html">Property Sales</a>
+            <a href="index.html#listings">Property Listings</a>
+            <a href="valuation.html">Property Valuation</a>
+            <a href="management.html">Property Management</a>
+          </div>
+        </li>
+        <li><a href="index.html#listings">Listings</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <img src="images/hero-image.jpg" alt="Property Management Services" class="hero-background">
+    <div class="hero-content">
+      <h1>Property Management Services</h1>
+      <p>Professional management solutions for your valuable real estate investments</p>
+      <a href="#services" class="btn btn-primary">Our Services</a>
+    </div>
+  </header>
+
+  <!-- Overview Section -->
+  <section class="overview" id="overview">
+    <div class="container">
+      <div class="overview-content">
+        <div class="overview-text">
+          <h2>Comprehensive Property Management</h2>
+          <p>At BuildMax Properties, we understand that owning rental properties can be both rewarding and challenging. Our comprehensive property management services are designed to maximize your investment returns while minimizing your stress and workload.</p>
+          <p>With years of experience in the Nigerian real estate market, we provide professional, reliable, and transparent property management solutions that protect your investment and ensure steady rental income.</p>
+        </div>
+        <div class="overview-stats">
+          <div class="stat-card">
+            <div class="stat-number">150+</div>
+            <div class="stat-label">Properties Managed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Client Satisfaction</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">24/7 </div>
+            <div class="stat-label">Support Available</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2>Our Management Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3>Tenant Screening</h3>
+          <p>Comprehensive background checks and reference validation to ensure quality tenants for your property.</p>
+          <ul>
+            <li>Credit history analysis</li>
+            <li>Employment verification</li>
+            <li>Previous landlord references</li>
+            <li>Criminal background check</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-money-bill-wave"></i>
+          </div>
+          <h3>Rent Collection</h3>
+          <p>Efficient rent collection system with multiple payment options and automated reminders for timely payments.</p>
+          <ul>
+            <li>Online payment portal</li>
+            <li>Automated payment reminders</li>
+            <li>Late fee enforcement</li>
+            <li>Monthly financial reports</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Maintenance & Repairs</h3>
+          <p>24/7 maintenance coordination with trusted contractors to keep your property in excellent condition.</p>
+          <ul>
+            <li>Emergency repair services</li>
+            <li>Routine maintenance scheduling</li>
+            <li>Quality contractor network</li>
+            <li>Maintenance cost optimization</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-clipboard-list"></i>
+          </div>
+          <h3>Property Inspections</h3>
+          <p>Regular property inspections to identify issues early and ensure your investment remains in top condition.</p>
+          <ul>
+            <li>Move-in/move-out inspections</li>
+            <li>Quarterly property checks</li>
+            <li>Detailed inspection reports</li>
+            <li>Photo documentation</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-file-contract"></i>
+          </div>
+          <h3>Legal Compliance</h3>
+          <p>Stay compliant with local housing laws and regulations with our expert legal guidance and documentation.</p>
+          <ul>
+            <li>Lease agreement preparation</li>
+            <li>Legal compliance monitoring</li>
+            <li>Eviction proceedings</li>
+            <li>Dispute resolution</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Financial Reporting</h3>
+          <p>Detailed financial reports and transparent accounting to keep you informed about your property's performance.</p>
+          <ul>
+            <li>Monthly income statements</li>
+            <li>Annual tax documentation</li>
+            <li>Expense tracking</li>
+            <li>ROI analysis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="why-choose-us">
+    <div class="container">
+      <h2>Why Choose BuildMax for Property Management?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <!-- <div class="benefit-icon">🎯</div> -->
+          <h3>Local Market Expertise</h3>
+          <p>Deep understanding of the Nigerian real estate market with localized strategies for maximum returns.</p>
+        </div>
+        <div class="benefit-card">
+          <!-- <div class="benefit-icon">📱</div> -->
+          <h3>Technology-Driven</h3>
+          <p>Modern property management software and online portals for seamless communication and transparency.</p>
+        </div>
+        <div class="benefit-card">
+          <!-- <div class="benefit-icon">⏰</div> -->
+          <h3>24/7 Support</h3>
+          <p>Round-the-clock emergency support for urgent property issues and tenant concerns.</p>
+        </div>
+        <div class="benefit-card">
+          <!-- <div class="benefit-icon">💰</div> -->
+          <h3>Cost-Effective Solutions</h3>
+          <p>Competitive management fees with transparent pricing and no hidden costs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Management Process Section -->
+  <section class="management-process" id="process">
+    <div class="container">
+      <h2>Our Management Process</h2>
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Initial Assessment</h3>
+            <p>We conduct a thorough evaluation of your property, including market analysis, condition assessment, and rental potential.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Marketing & Tenant Placement</h3>
+            <p>Professional marketing across multiple platforms, tenant screening, and lease execution to secure quality tenants.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Ongoing Management</h3>
+            <p>Regular maintenance, rent collection, tenant relations, and property inspections to maintain your investment.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Reporting & Communication</h3>
+            <p>Monthly reports, financial statements, and regular updates to keep you informed about your property's performance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <h2>Management Packages</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="package-header">
+            <h3>Basic Management</h3>
+            <!-- <div class="price">8% <span>of monthly rent</span></div> -->
+          </div>
+          <ul class="package-features">
+            <li>Tenant screening & placement</li>
+            <li>Rent collection</li>
+            <li>Basic maintenance coordination</li>
+            <li>Monthly financial reports</li>
+            <li>Annual property inspection</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Get Started</a>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="popular-badge">Most Popular</div>
+          <div class="package-header">
+            <h3>Premium Management</h3>
+            <!-- <div class="price">10% <span>of monthly rent</span></div> -->
+          </div>
+          <ul class="package-features">
+            <li>Everything in Basic package</li>
+            <li>24/7 emergency maintenance</li>
+            <li>Quarterly property inspections</li>
+            <li>Legal compliance monitoring</li>
+            <li>Detailed expense tracking</li>
+            <li>Priority customer support</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Get Started</a>
+        </div>
+
+        <div class="pricing-card">
+          <div class="package-header">
+            <h3>Full-Service Management</h3>
+            <!-- <div class="price">12% <span>of monthly rent</span></div> -->
+          </div>
+          <ul class="package-features">
+            <li>Everything in Premium package</li>
+            <li>Property improvement consultation</li>
+            <li>Market analysis & rent optimization</li>
+            <li>Insurance claims assistance</li>
+            <li>Tax document preparation</li>
+            <li>Dedicated account manager</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA Section -->
+  <section class="contact-cta" id="contact">
+    <div class="container">
+      <h2>Ready to Maximize Your Property Investment?</h2>
+      <p>Let our experienced team handle your property management needs while you enjoy passive income.</p>
+      <div class="cta-buttons">
+        <a href="mailto:buildmaxp@gmail.com" class="btn btn-secondary">Get Free Consultation</a>
+        <a href="tel:+2348138898679" class="btn btn-outline">Call Now: +234 813 889 8679</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <img src="images/logo-blackbg.png" alt="Build Max Properties Logo" class="footer-logo-image">
+            <div class="footer-logo-text">
+            </div>
+          </div>
+          <p>Your trusted partner in finding the perfect property. We specialize in premium real estate solutions across Nigeria.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/share/16iRSMs64y/?mibextid=wwXIfr" target="_blank">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://wa.me/2348138898679" target="_blank">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/build_maxltd?igsh=dTAzMmM1N3ZmejBo&utm_source=qr" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@buildmaxltd_?_t=ZS-8ygNUWWzo0d&_r=1" target="_blank">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#listings">Properties</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="property-sale.html">Property Sales</a></li>
+            <!-- <li><a href="index.html#listings">Property Rentals</a></li> -->
+            <li><a href="valuation.html">Property Valuation</a></li>
+            <li><a href="management.html">Property Management</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <div class="contact-info">
+            <p>📍 Akobo, Ibadan, Nigeria.</p>
+            <p>📞 +234 813 889 8679</p>
+            <p>✉️ buildmaxp@gmail.com</p>
+            <p>🕒 Open 24hrs</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 BuildMax Properties. All rights reserved. | Licensed Real Estate Developing Agency | RC: 7343908</p>
+        <div class="footer-legal">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="management-script.js"></script>
+</body>
+</html>

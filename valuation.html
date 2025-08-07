@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Property Valuation - Build Max Properties</title>
+  <link rel="stylesheet" href="valuation.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="icon" type="image/png" href="images/logo-favicon.jpeg" sizes="32x32">
+  <link rel="icon" type="image/png" href="images/logo-favicon.jpeg" sizes="16x16">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/logo-favicon.jpeg">
+
+  <link rel="icon" type="image/png" sizes="192x192" href="images/logo-favicon.jpeg">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/logo-favicon.jpeg">
+
+  <meta name="msapplication-TileImage" content="images/mstile-150x150.png">
+</head>
+<body>
+    
+  <!-- <div class="loading-container" id="loadingScreen">
+    <div class="loading-dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div> -->
+<!--  Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+         <a href="index.html"><img src="images/logo-pi.jpeg" alt="Build Max Properties Logo" class="logo-image"></a>
+        <div class="logo-text-container">
+          <!-- <span class="logo-text">Build Max</span>
+          <span class="logo-subtitle">Properties</span> -->
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Services <span class="dropdown-arrow">▾</span></a>
+          <div class="dropdown-content">
+            <a href="property-sale.html">Property Sales</a>
+            <a href="index.html#listings">Property Listings</a>
+            <a href="valuation.html">Property Valuation</a>
+            <a href="management.html">Property Management</a>
+          </div>
+        </li>
+        <li><a href="index.html#listings">Listings</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <img src="images/hero-image.jpg" alt="Property Valuation Services" class="hero-background">
+    <div class="hero-content">
+      <h1>Property Valuation Services</h1>
+      <p>Get accurate, professional property valuations from certified experts</p>
+      <a href="#valuation-form" class="btn btn-primary">Request Valuation</a>
+    </div>
+  </header>
+
+  <!-- Valuation Overview Section -->
+  <section class="valuation-overview">
+    <div class="container">
+      <div class="overview-content">
+        <div class="overview-text">
+          <h2>Professional Property Valuation</h2>
+          <p>At BuildMax Properties, we provide comprehensive property valuation services using industry-standard methodologies and local market expertise. Our certified valuers deliver accurate assessments for residential, commercial, and industrial properties across Nigeria.</p>
+          
+          <div class="valuation-benefits">
+            <div class="benefit-item">
+              <div class="benefit-icon">📊</div>
+              <div class="benefit-content">
+                <h4>Market Analysis</h4>
+                <p>Detailed comparative market analysis using recent sales data</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">📋</div>
+              <div class="benefit-content">
+                <h4>Comprehensive Reports</h4>
+                <p>Professional reports suitable for banks, insurance, and legal purposes</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">⏱️</div>
+              <div class="benefit-content">
+                <h4>Quick Turnaround</h4>
+                <p>Standard reports delivered within 5-7 business days</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="overview-image">
+          <img src="images/kolapo-gra-duplex.jpeg" alt="Property Assessment">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="container">
+      <h2>Our Valuation Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <!-- <div class="service-icon">🏠</div> -->
+          <h3>Residential Valuation</h3>
+          <p>Comprehensive valuation for houses, apartments, and condominiums for sale, purchase, or refinancing purposes.</p>
+          <ul>
+            <li>Market value assessment</li>
+            <li>Insurance valuation</li>
+            <li>Mortgage purposes</li>
+            <li>Divorce settlements</li>
+          </ul>
+          <!-- <div class="service-price">Starting from ₦50,000</div> -->
+        </div>
+        
+        <div class="service-card">
+          <!-- <div class="service-icon">🏢</div> -->
+          <h3>Commercial Valuation</h3>
+          <p>Professional assessment of office buildings, retail spaces, and commercial properties for investment decisions.</p>
+          <ul>
+            <li>Investment analysis</li>
+            <li>Rental income assessment</li>
+            <li>Portfolio valuation</li>
+            <li>Tax assessment</li>
+          </ul>
+          <!-- <div class="service-price">Starting from ₦150,000</div> -->
+        </div>
+        
+        <div class="service-card">
+          <!-- <div class="service-icon">🏭</div> -->
+          <h3>Industrial Valuation</h3>
+          <p>Specialized valuation for industrial properties, warehouses, and manufacturing facilities.</p>
+          <ul>
+            <li>Asset valuation</li>
+            <li>Compulsory acquisition</li>
+            <li>Insurance purposes</li>
+            <li>Financial reporting</li>
+          </ul>
+          <!-- <div class="service-price">Starting from ₦200,000</div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Valuation Process Section -->
+  <section class="process-section">
+    <div class="container">
+      <h2>Our Valuation Process</h2>
+      <div class="process-steps">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Initial Consultation</h3>
+            <p>We discuss your valuation needs, timeline, and specific requirements to ensure we deliver exactly what you need.</p>
+          </div>
+        </div>
+        
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Property Inspection</h3>
+            <p>Our certified valuer conducts a thorough on-site inspection, documenting all relevant features and conditions.</p>
+          </div>
+        </div>
+        
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Market Research</h3>
+            <p>We analyze comparable sales, current market trends, and local factors that influence property values.</p>
+          </div>
+        </div>
+        
+        <div class="step-item">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Valuation Report</h3>
+            <p>We prepare a comprehensive report with our professional opinion of value, supporting data, and methodology used.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Valuation Request Form -->
+  <section class="valuation-form-section" id="valuation-form">
+    <div class="container">
+      <div class="form-container">
+        <div class="form-header">
+          <h2>Request Property Valuation</h2>
+          <p>Fill out the form below and we'll contact you within 24 hours to discuss your valuation needs.</p>
+        </div>
+        
+        <form class="valuation-form" id="valuationForm" action="https://formspree.io/f/mrbloqwr" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName">Full Name *</label>
+              <input type="text" id="fullName" name="fullName" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="propertyType">Property Type *</label>
+              <select id="propertyType" name="propertyType" required>
+                <option value="">Select Property Type</option>
+                <option value="residential">Residential</option>
+                <option value="commercial">Commercial</option>
+                <option value="industrial">Industrial</option>
+                <option value="land">Land/Plot</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="propertyAddress">Property Address *</label>
+            <textarea id="propertyAddress" name="propertyAddress" rows="3" required placeholder="Please provide the complete address of the property to be valued"></textarea>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="purposeOfValuation">Purpose of Valuation *</label>
+              <select id="purposeOfValuation" name="purposeOfValuation" required>
+                <option value="">Select Purpose</option>
+                <option value="sale">Sale/Purchase</option>
+                <option value="mortgage">Mortgage/Loan</option>
+                <option value="insurance">Insurance</option>
+                <option value="tax">Tax Assessment</option>
+                <option value="legal">Legal/Court Matters</option>
+                <option value="investment">Investment Decision</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="urgency">Urgency Level</label>
+              <select id="urgency" name="urgency">
+                <option value="standard">Standard (5-7 days)</option>
+                <option value="urgent">Urgent (2-3 days)</option>
+                <option value="rush">Rush (24-48 hours)</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="additionalInfo">Additional Information</label>
+            <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Please provide any additional details about the property or special requirements for the valuation"></textarea>
+          </div>
+          
+          <div class="form-group checkbox-group">
+            <label class="checkbox-container">
+              <input type="checkbox" id="terms" name="terms" required>
+              <span class="checkmark"></span>
+              I agree to the <a href="#terms">Terms of Service</a> and <a href="#privacy">Privacy Policy</a>
+            </label>
+          </div>
+          
+          <button type="submit" class="btn btn-primary form-submit">Request Valuation</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contact CTA -->
+  <section class="contact-cta">
+    <div class="container">
+      <h2>Need a Property Valuation Today?</h2>
+      <p>Our expert valuers are ready to provide you with accurate, professional property assessments.</p>
+      <div class="cta-buttons">
+        <a href="tel:+2348138898679" class="btn btn-secondary">Call Now: +234 813 889 8679</a>
+        <a href="mailto:buildmaxp@gmail.com" class="btn btn-secondary">Email Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <img src="images/logo-blackbg.png" alt="Build Max Properties Logo" class="footer-logo-image">
+            <div class="footer-logo-text">
+              <!-- <span class="logo-text">Build Max</span>
+              <span class="logo-subtitle">Properties</span> -->
+            </div>
+          </div>
+          <p>Your trusted partner in finding the perfect property. We specialize in premium real estate solutions across Nigeria.</p>
+         <div class="social-links">
+  <a href="https://www.facebook.com/share/16iRSMs64y/?mibextid=wwXIfr" target="_blank">
+    <i class="fab fa-facebook"></i>
+  </a>
+  <a href="https://wa.me/2348138898679" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://www.instagram.com/build_maxltd?igsh=dTAzMmM1N3ZmejBo&utm_source=qr" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://www.tiktok.com/@buildmaxltd_?_t=ZS-8ygNUWWzo0d&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+</div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#listings">Properties</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="property-sale.html">Property Sales</a></li>
+            <!-- <li><a href="index.html#listings">Property Rentals</a></li> -->
+            <li><a href="valuation.html">Property Valuation</a></li>
+            <li><a href="management.html">Property Management</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <div class="contact-info">
+            <p>📍 Akobo, Ibadan, Nigeria.</p>
+            <p>📞 +234 813 889 8679</p>
+            <p>✉️ buildmaxp@gmail.com</p>
+            <p>🕒 Open 24hrs</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 BuildMax Properties. All rights reserved. | Licensed Real Estate Developing Agency | RC: 7343908</p>
+        <div class="footer-legal">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="valuation.js"></script>
+</body>
+</html>
