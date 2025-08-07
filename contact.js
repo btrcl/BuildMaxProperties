@@ -200,30 +200,30 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Phone number formatting (optional)
-document.addEventListener('DOMContentLoaded', function() {
-  const phoneInput = document.getElementById('phone');
+// // Phone number formatting (optional)
+// document.addEventListener('DOMContentLoaded', function() {
+//   const phoneInput = document.getElementById('phone');
   
-  if (phoneInput) {
-    phoneInput.addEventListener('input', function(e) {
-      let value = e.target.value.replace(/\D/g, '');
+//   if (phoneInput) {
+//     phoneInput.addEventListener('input', function(e) {
+//       let value = e.target.value.replace(/\D/g, '');
       
-      // Format as Nigerian phone number
-      if (value.length <= 11) {
-        if (value.startsWith('0')) {
-          value = value.substring(1);
-        }
-        if (value.length > 3) {
-          value = value.substring(0, 3) + ' ' + value.substring(3);
-        }
-        if (value.length > 7) {
-          value = value.substring(0, 8) + ' ' + value.substring(8);
-        }
-        e.target.value = '+234 ' + value;
-      }
-    });
-  }
-});
+//       // Format as Nigerian phone number
+//       if (value.length <= 11) {
+//         if (value.startsWith('0')) {
+//           value = value.substring(1);
+//         }
+//         if (value.length > 3) {
+//           value = value.substring(0, 3) + ' ' + value.substring(3);
+//         }
+//         if (value.length > 7) {
+//           value = value.substring(0, 8) + ' ' + value.substring(8);
+//         }
+//         e.target.value = '+234 ' + value;
+//       }
+//     });
+//   }
+// });
 
 // Add loading states for better UX
 function addLoadingState(element) {
