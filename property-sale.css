@@ -1154,4 +1154,10 @@ footer {
   .loading-dots {
     gap: 6px;
   }
+
+   .footer-section .contact-info a {
+    text-decoration: none;
+    color:var(--text-light);;
+  }
+
 }

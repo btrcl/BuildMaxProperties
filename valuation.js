@@ -233,66 +233,61 @@ function showFieldError(field, message) {
 
 function handleFormSubmission(event) {
   event.preventDefault();
-
+  
   const form = event.target;
   const formData = new FormData(form);
-  const submitButton = form.querySelector('.form-submit');
-  const originalText = submitButton.textContent;
-
-  // Validate fields
+  const data = Object.fromEntries(formData);
+  
+  // Validate all fields
   let isFormValid = true;
   const inputs = form.querySelectorAll('input, select, textarea');
-
+  
   inputs.forEach(input => {
     const fieldValid = validateField({ target: input });
     if (!fieldValid) {
       isFormValid = false;
     }
   });
-
+  
+  // Check terms and conditions
   const termsCheckbox = form.querySelector('#terms');
   if (!termsCheckbox.checked) {
     isFormValid = false;
     showFieldError(termsCheckbox, 'Please accept the terms and conditions');
   }
-
+  
   if (!isFormValid) {
+    // Scroll to first error
     const firstError = form.querySelector('.error-message');
     if (firstError) {
       firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
     return;
   }
-
+  
   // Show loading state
+  const submitButton = form.querySelector('.form-submit');
+  const originalText = submitButton.textContent;
   submitButton.textContent = 'Submitting...';
   submitButton.disabled = true;
   submitButton.style.opacity = '0.7';
-
-  // Submit to Formspree
-  fetch('https://formspree.io/f/mrbloqwr', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json'
-    },
-    body: formData
-  })
-    .then(response => {
-      if (response.ok) {
-        form.reset();
-        showSuccessMessage();
-      } else {
-        alert('There was an issue submitting the form. Please try again.');
-      }
-    })
-    .catch(() => {
-      alert('Network error. Please try again later.');
-    })
-    .finally(() => {
-      submitButton.textContent = originalText;
-      submitButton.disabled = false;
-      submitButton.style.opacity = '1';
-    });
+  
+  // Simulate form submission
+  setTimeout(() => {
+    console.log('Form submitted:', data);
+    
+    // Show success message
+    showSuccessMessage();
+    
+    // Reset form
+    form.reset();
+    
+    // Reset button
+    submitButton.textContent = originalText;
+    submitButton.disabled = false;
+    submitButton.style.opacity = '1';
+    
+  }, 2000);
 }
 
 function showSuccessMessage() {
@@ -399,6 +394,303 @@ function debounce(func, wait) {
   };
 }
 
-// // Resize handler with debounce
-// const handleResize = debounce(function() {
-//   if (window.
+// Resize handler with debounce
+const handleResize = debounce(function() {
+  if (window.innerWidth > 768) {
+    const nav = document.getElementById("navLinks");
+    const hamburger = document.querySelector(".hamburger");
+    
+    if (nav.classList.contains('show')) {
+      nav.classList.remove('show');
+      hamburger.classList.remove('active');
+    }
+    
+    // Reset dropdowns on desktop
+    document.querySelectorAll('.dropdown-content').forEach(content => {
+      content.style.display = '';
+    });
+  }
+}, 250);
+
+window.addEventListener('resize', handleResize);
+
+// Price animation on scroll
+function animateNumbers() {
+  const priceElements = document.querySelectorAll('.service-price');
+  
+  priceElements.forEach(element => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animatePrice(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    observer.observe(element);
+  });
+}
+
+function animatePrice(element) {
+  const text = element.textContent;
+  const match = text.match(/₦([\d,]+)/);
+  
+  if (match) {
+    const targetPrice = parseInt(match[1].replace(/,/g, ''));
+    const prefix = text.split('₦')[0];
+    const suffix = text.split(match[0])[1];
+    
+    let currentPrice = 0;
+    const increment = targetPrice / 50;
+    
+    const timer = setInterval(() => {
+      currentPrice += increment;
+      
+      if (currentPrice >= targetPrice) {
+        currentPrice = targetPrice;
+        clearInterval(timer);
+      }
+      
+      const formattedPrice = Math.floor(currentPrice).toLocaleString();
+      element.textContent = `${prefix}₦${formattedPrice}${suffix}`;
+    }, 30);
+  }
+}
+
+// Initialize price animation
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(animateNumbers, 500);
+});
+
+// Form field enhancements
+document.addEventListener('DOMContentLoaded', function() {
+  // Auto-format phone number
+  const phoneInput = document.getElementById('phone');
+  if (phoneInput) {
+    phoneInput.addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      
+      // Nigerian phone number formatting
+      if (value.startsWith('234')) {
+        value = '+' + value;
+      } else if (value.startsWith('0') && value.length > 1) {
+        value = '+234' + value.substring(1);
+      }
+      
+      e.target.value = value;
+    });
+  }
+  
+  // Dynamic form updates based on property type
+  const propertyTypeSelect = document.getElementById('propertyType');
+  const purposeSelect = document.getElementById('purposeOfValuation');
+  
+  if (propertyTypeSelect && purposeSelect) {
+    propertyTypeSelect.addEventListener('change', function() {
+      updatePurposeOptions(this.value, purposeSelect);
+    });
+  }
+});
+
+function updatePurposeOptions(propertyType, purposeSelect) {
+  const commonOptions = [
+    { value: 'sale', text: 'Sale/Purchase' },
+    { value: 'mortgage', text: 'Mortgage/Loan' },
+    { value: 'insurance', text: 'Insurance' },
+    { value: 'tax', text: 'Tax Assessment' },
+    { value: 'legal', text: 'Legal/Court Matters' },
+    { value: 'investment', text: 'Investment Decision' },
+    { value: 'other', text: 'Other' }
+  ];
+  
+  let specificOptions = [];
+  
+  switch (propertyType) {
+    case 'commercial':
+      specificOptions = [
+        { value: 'rental', text: 'Rental Income Assessment' },
+        { value: 'portfolio', text: 'Portfolio Valuation' },
+        { value: 'acquisition', text: 'Acquisition/Merger' }
+      ];
+      break;
+    case 'industrial':
+      specificOptions = [
+        { value: 'asset', text: 'Asset Valuation' },
+        { value: 'compulsory', text: 'Compulsory Acquisition' },
+        { value: 'financial', text: 'Financial Reporting' }
+      ];
+      break;
+    case 'land':
+      specificOptions = [
+        { value: 'development', text: 'Development Planning' },
+        { value: 'subdivision', text: 'Subdivision' }
+      ];
+      break;
+  }
+  
+  // Clear existing options except the first one
+  const firstOption = purposeSelect.firstElementChild;
+  purposeSelect.innerHTML = '';
+  purposeSelect.appendChild(firstOption);
+  
+  // Add common options
+  commonOptions.forEach(option => {
+    const optionElement = document.createElement('option');
+    optionElement.value = option.value;
+    optionElement.textContent = option.text;
+    purposeSelect.appendChild(optionElement);
+  });
+  
+  // Add specific options if any
+  if (specificOptions.length > 0) {
+    // Add separator
+    const separator = document.createElement('option');
+    separator.disabled = true;
+    separator.textContent = '--- Specialized Options ---';
+    purposeSelect.appendChild(separator);
+    
+    specificOptions.forEach(option => {
+      const optionElement = document.createElement('option');
+      optionElement.value = option.value;
+      optionElement.textContent = option.text;
+      purposeSelect.appendChild(optionElement);
+    });
+  }
+}
+
+// Add loading states for better UX
+function addLoadingState(element) {
+  element.style.opacity = '0.7';
+  element.style.pointerEvents = 'none';
+  element.style.cursor = 'wait';
+}
+
+function removeLoadingState(element) {
+  element.style.opacity = '1';
+  element.style.pointerEvents = 'auto';
+  element.style.cursor = 'default';
+}
+
+// Enhance step animations
+document.addEventListener('DOMContentLoaded', function() {
+  const steps = document.querySelectorAll('.step-item');
+  
+  const stepObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          
+          // Animate the step number
+          const stepNumber = entry.target.querySelector('.step-number');
+          if (stepNumber) {
+            stepNumber.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+              stepNumber.style.transform = 'scale(1)';
+            }, 200);
+          }
+        }, index * 200);
+        
+        stepObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  
+  steps.forEach(step => {
+    step.style.opacity = '0';
+    step.style.transform = 'translateY(30px)';
+    step.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    stepObserver.observe(step);
+  });
+});
+
+// Service card hover enhancements
+document.addEventListener('DOMContentLoaded', function() {
+  const serviceCards = document.querySelectorAll('.service-card');
+  
+  serviceCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-8px) scale(1.02)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0) scale(1)';
+    });
+  });
+});
+
+// Smooth scroll to form when clicking CTA buttons
+document.addEventListener('DOMContentLoaded', function() {
+  const ctaButtons = document.querySelectorAll('a[href="#valuation-form"]');
+  
+  ctaButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const target = document.getElementById('valuation-form');
+      if (target) {
+        const navHeight = document.querySelector('.navbar').offsetHeight;
+        const targetPosition = target.offsetTop - navHeight - 20;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+        
+        // Focus on first input after scroll
+        setTimeout(() => {
+          const firstInput = target.querySelector('input');
+          if (firstInput) {
+            firstInput.focus();
+          }
+        }, 500);
+      }
+    });
+  });
+});
+
+// Enhanced error handling for form
+window.addEventListener('unhandledrejection', function(event) {
+  console.error('Form submission error:', event.reason);
+  
+  // Show user-friendly error message
+  const errorModal = document.createElement('div');
+  errorModal.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #e74c3c;
+    color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    z-index: 10000;
+    font-size: 14px;
+    max-width: 300px;
+  `;
+  errorModal.textContent = 'There was an error submitting your request. Please try again.';
+  
+  document.body.appendChild(errorModal);
+  
+  setTimeout(() => {
+    errorModal.remove();
+  }, 5000);
+});
+
+// Initialize all enhancements
+document.addEventListener('DOMContentLoaded', function() {
+  // Add focus styles to form elements
+  const formElements = document.querySelectorAll('input, select, textarea');
+  formElements.forEach(element => {
+    element.addEventListener('focus', function() {
+      this.style.boxShadow = '0 0 0 3px rgba(156, 175, 136, 0.1)';
+    });
+    
+    element.addEventListener('blur', function() {
+      if (!this.style.borderColor.includes('e74c3c')) {
+        this.style.boxShadow = '';
+      }
+    });
+  });
+});

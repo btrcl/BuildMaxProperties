@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Property Listings - Build Max Properties</title>
+  <link rel="stylesheet" href="listing.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="icon" type="image/png" href="images/logo-favicon.jpeg" sizes="32x32">
+  <link rel="icon" type="image/png" href="images/logo-favicon.jpeg" sizes="16x16">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/logo-favicon.jpeg">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div class="loading-container" id="loadingScreen">
+    <div class="loading-dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html"><img src="images/logo-pi.jpeg" alt="Build Max Properties Logo" class="logo-image"></a>
+        <div class="logo-text-container">
+          <!-- <span class="logo-text">Build Max</span>
+          <span class="logo-subtitle">Properties</span> -->
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Services <span class="dropdown-arrow">▾</span></a>
+          <div class="dropdown-content">
+            <a href="#properties">Property Sales</a>
+            <a href="#properties">Property Listings</a>
+            <a href="valuation.html">Property Valuation</a>
+            <a href="management.html">Property Management</a>
+          </div>
+        </li>
+        <li><a href="listings.html" class="active">Listings</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <img src="images/hero-image.jpg" alt="Property Listings" class="hero-background">
+    <div class="hero-content">
+      <h1>Premium Property Listings</h1>
+      <p>Discover your perfect home from our curated collection of exceptional properties</p>
+      <div class="search-bar">
+        <div class="search-input-group">
+          <i class="fas fa-map-marker-alt"></i>
+          <input type="text" placeholder="Enter location..." id="locationSearch">
+        </div>
+        <div class="search-input-group">
+          <i class="fas fa-home"></i>
+          <select id="propertyType">
+            <option value="">Property Type</option>
+            <option value="duplex">Duplex</option>
+            <option value="apartment">Apartment</option>
+            <option value="bungalow">Bungalow</option>
+            <option value="mansion">Mansion</option>
+          </select>
+        </div>
+        <div class="search-input-group">
+          <i class="fas fa-naira-sign"></i>
+          <select id="priceRange">
+            <option value="">Price Range</option>
+            <option value="0-100">₦0 - ₦100M</option>
+            <option value="100-300">₦100M - ₦300M</option>
+            <option value="300-500">₦300M - ₦500M</option>
+            <option value="500+">₦500M+</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" onclick="filterProperties()">
+          <i class="fas fa-search"></i> Search
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters & Sorting -->
+  <section class="filters-section">
+    <div class="container">
+      <div class="filters-header">
+        <h2>Browse Properties</h2>
+        <div class="results-info">
+          <span id="resultsCount">Showing 12 of 24 properties</span>
+        </div>
+      </div>
+      
+      <div class="filters-bar">
+        <div class="filter-group">
+          <button class="filter-btn active" data-filter="all">All Properties</button>
+          <button class="filter-btn" data-filter="duplex">Duplex</button>
+          <button class="filter-btn" data-filter="apartment">Apartment</button>
+          <button class="filter-btn" data-filter="bungalow">Bungalow</button>
+          <button class="filter-btn" data-filter="mansion">Mansion</button>
+        </div>
+        
+        <div class="sort-group">
+          <select id="sortBy">
+            <option value="featured">Sort by: Featured</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+          </select>
+          <div class="view-toggle">
+            <button class="view-btn active" data-view="grid"><i class="fas fa-th"></i></button>
+            <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Properties Grid -->
+  <section class="properties" id="properties">
+    <div class="container">
+      <div class="properties-grid" id="propertiesGrid">
+        
+        <!-- Property 1 -->
+        <div class="property-card" data-type="duplex" data-price="185" data-location="ibadan">
+          <div class="property-image">
+            <img src="images/kolapo-gra-duplex.jpeg" alt="Detached Duplex in Kolapo">
+            <div class="property-badge">Featured</div>
+            <div class="property-overlay">
+              <button class="quick-view-btn" onclick="openPropertyModal(1)">Quick View</button>
+            </div>
+          </div>
+          <div class="property-info">
+            <div class="property-price">₦185,000,000</div>
+            <h3>Luxury Detached Duplex</h3>
+            <p class="property-location"><i class="fas fa-map-marker-alt"></i> Kolapo Ishola GRA, Ibadan</p>
+            <p class="property-description">Stunning 4-bedroom detached duplex in a prestigious serene mini court with modern amenities.</p>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 4 Beds</span>
+              <span><i class="fas fa-bath"></i> 4 Baths</span>
+              <span><i class="fas fa-car"></i> 2 Parking</span>
+              <span><i class="fas fa-expand-arrows-alt"></i> 450 sqm</span>
+            </div>
+            <div class="property-actions">
+              <button class="btn btn-primary" onclick="openPropertyModal(1)">View Details</button>
+              <button class="btn btn-outline"><i class="fas fa-heart"></i></button>
+              <button class="btn btn-outline"><i class="fas fa-share-alt"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Property 2 -->
+        <div class="property-card" data-type="mansion" data-price="1300" data-location="lagos">
+          <div class="property-image">
+            <img src="images/Osapa-lekki.jpeg" alt="Grande smart home in Lekki">
+            <div class="property-badge premium">Premium</div>
+            <div class="property-overlay">
+              <button class="quick-view-btn" onclick="openPropertyModal(2)">Quick View</button>
+            </div>
+          </div>
+          <div class="property-info">
+            <div class="property-price">₦1,300,000,000</div>
+            <h3>Grande Smart Mansion</h3>
+            <p class="property-location"><i class="fas fa-map-marker-alt"></i> Osapa, Lekki, Lagos</p>
+            <p class="property-description">Ultra-modern 5-bedroom smart home featuring private cinema and state-of-the-art technology.</p>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 5 Beds</span>
+              <span><i class="fas fa-bath"></i> 5 Baths</span>
+              <span><i class="fas fa-car"></i> 3 Parking</span>
+              <span><i class="fas fa-expand-arrows-alt"></i> 680 sqm</span>
+            </div>
+            <div class="property-actions">
+              <button class="btn btn-primary" onclick="openPropertyModal(2)">View Details</button>
+              <button class="btn btn-outline"><i class="fas fa-heart"></i></button>
+              <button class="btn btn-outline"><i class="fas fa-share-alt"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Property 3 -->
+        <div class="property-card" data-type="duplex" data-price="180" data-location="ibadan">
+          <div class="property-image">
+            <img src="images/detached-duplex+BQ.jpeg" alt="Semi-detached Duplex in Carlton gate estate">
+            <div class="property-badge">New</div>
+            <div class="property-overlay">
+              <button class="quick-view-btn" onclick="openPropertyModal(3)">Quick View</button>
+            </div>
+          </div>
+          <div class="property-info">
+            <div class="property-price">₦180,000,000</div>
+            <h3>Contemporary Semi-Detached Duplex</h3>
+            <p class="property-location"><i class="fas fa-map-marker-alt"></i> Carlton Gate Estate, Ibadan</p>
+            <p class="property-description">Beautiful contemporary 4-bedroom semi-detached duplex with a separate boys' quarter.</p>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 4 Beds</span>
+              <span><i class="fas fa-bath"></i> 4 Baths</span>
+              <span><i class="fas fa-car"></i> 2 Parking</span>
+              <span><i class="fas fa-expand-arrows-alt"></i> 420 sqm</span>
+            </div>
+            <div class="property-actions">
+              <button class="btn btn-primary" onclick="openPropertyModal(3)">View Details</button>
+              <button class="btn btn-outline"><i class="fas fa-heart"></i></button>
+              <button class="btn btn-outline"><i class="fas fa-share-alt"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Properties -->
+        <div class="property-card" data-type="apartment" data-price="85" data-location="abuja">
+          <div class="property-image">
+            <img src="images/hero-image.jpg" alt="Modern Apartment">
+            <div class="property-overlay">
+              <button class="quick-view-btn" onclick="openPropertyModal(4)">Quick View</button>
+            </div>
+          </div>
+          <div class="property-info">
+            <div class="property-price">₦85,000,000</div>
+            <h3>Modern Apartment Complex</h3>
+            <p class="property-location"><i class="fas fa-map-marker-alt"></i> Wuse II, Abuja</p>
+            <p class="property-description">Stylish 3-bedroom apartment in a secure gated community with modern facilities.</p>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 3 Beds</span>
+              <span><i class="fas fa-bath"></i> 2 Baths</span>
+              <span><i class="fas fa-car"></i> 1 Parking</span>
+              <span><i class="fas fa-expand-arrows-alt"></i> 180 sqm</span>
+            </div>
+            <div class="property-actions">
+              <button class="btn btn-primary" onclick="openPropertyModal(4)">View Details</button>
+              <button class="btn btn-outline"><i class="fas fa-heart"></i></button>
+              <button class="btn btn-outline"><i class="fas fa-share-alt"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="property-card" data-type="bungalow" data-price="120" data-location="lagos">
+          <div class="property-image">
+            <img src="images/hero-image.jpg" alt="Executive Bungalow">
+            <div class="property-overlay">
+              <button class="quick-view-btn" onclick="openPropertyModal(5)">Quick View</button>
+            </div>
+          </div>
+          <div class="property-info">
+            <div class="property-price">₦120,000,000</div>
+            <h3>Executive Bungalow</h3>
+            <p class="property-location"><i class="fas fa-map-marker-alt"></i> Magodo, Lagos</p>
+            <p class="property-description">Spacious 4-bedroom executive bungalow with large compound and garden area.</p>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 4 Beds</span>
+              <span><i class="fas fa-bath"></i> 3 Baths</span>
+              <span><i class="fas fa-car"></i> 2 Parking</span>
+              <span><i class="fas fa-expand-arrows-alt"></i> 380 sqm</span>
+            </div>
+            <div class="property-actions">
+              <button class="btn btn-primary" onclick="openPropertyModal(5)">View Details</button>
+              <button class="btn btn-outline"><i class="fas fa-heart"></i></button>
+              <button class="btn btn-outline"><i class="fas fa-share-alt"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="property-card" data-type="duplex" data-price="220" data-location="lagos">
+          <div class="property-image">
+            <img src="images/hero-image.jpg" alt="Luxury Duplex">
+            <div class="property-badge">Hot</div>
+            <div class="property-overlay">
+              <button class="quick-view-btn" onclick="openPropertyModal(6)">Quick View</button>
+            </div>
+          </div>
+          <div class="property-info">
+            <div class="property-price">₦220,000,000</div>
+            <h3>Luxury Duplex Villa</h3>
+            <p class="property-location"><i class="fas fa-map-marker-alt"></i> Victoria Island, Lagos</p>
+            <p class="property-description">Premium 5-bedroom duplex villa with swimming pool and breathtaking city views.</p>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 5 Beds</span>
+              <span><i class="fas fa-bath"></i> 4 Baths</span>
+              <span><i class="fas fa-car"></i> 3 Parking</span>
+              <span><i class="fas fa-expand-arrows-alt"></i> 520 sqm</span>
+            </div>
+            <div class="property-actions">
+              <button class="btn btn-primary" onclick="openPropertyModal(6)">View Details</button>
+              <button class="btn btn-outline"><i class="fas fa-heart"></i></button>
+              <button class="btn btn-outline"><i class="fas fa-share-alt"></i></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button class="page-btn" disabled><i class="fas fa-chevron-left"></i></button>
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Property Modal -->
+  <div class="property-modal" id="propertyModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">Property Details</h2>
+        <button class="close-btn" onclick="closePropertyModal()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="modal-image-gallery">
+          <div class="main-image">
+            <img id="modalMainImage" src="" alt="Property Image">
+          </div>
+          <div class="thumbnail-images">
+            <img class="thumbnail active" src="" alt="Thumbnail 1" onclick="changeMainImage(this)">
+            <img class="thumbnail" src="" alt="Thumbnail 2" onclick="changeMainImage(this)">
+            <img class="thumbnail" src="" alt="Thumbnail 3" onclick="changeMainImage(this)">
+          </div>
+        </div>
+        
+        <div class="modal-info">
+          <div class="property-header">
+            <div class="property-price" id="modalPrice">₦185,000,000</div>
+            <div class="property-actions-modal">
+              <button class="btn btn-outline"><i class="fas fa-heart"></i> Save</button>
+              <button class="btn btn-outline"><i class="fas fa-share-alt"></i> Share</button>
+              <button class="btn btn-outline"><i class="fas fa-print"></i> Print</button>
+            </div>
+          </div>
+          
+          <h3 id="modalPropertyName">Luxury Detached Duplex</h3>
+          <p class="modal-location"><i class="fas fa-map-marker-alt"></i> <span id="modalLocation">Kolapo Ishola GRA, Ibadan</span></p>
+          
+          <div class="property-features-modal" id="modalFeatures">
+            <div class="feature-item">
+              <i class="fas fa-bed"></i>
+              <span>4 Bedrooms</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-bath"></i>
+              <span>4 Bathrooms</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-car"></i>
+              <span>2 Parking Spaces</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-expand-arrows-alt"></i>
+              <span>450 sqm</span>
+            </div>
+          </div>
+          
+          <div class="property-description-modal">
+            <h4>Description</h4>
+            <p id="modalDescription">Stunning 4-bedroom detached duplex in a prestigious serene mini court with modern amenities and beautiful finishing.</p>
+          </div>
+          
+          <div class="property-amenities">
+            <h4>Amenities</h4>
+            <div class="amenities-grid" id="modalAmenities">
+              <span><i class="fas fa-wifi"></i> High-Speed Internet</span>
+              <span><i class="fas fa-swimming-pool"></i> Swimming Pool</span>
+              <span><i class="fas fa-dumbbell"></i> Fitness Center</span>
+              <span><i class="fas fa-shield-alt"></i> 24/7 Security</span>
+              <span><i class="fas fa-bolt"></i> Backup Generator</span>
+              <span><i class="fas fa-water"></i> Water Treatment</span>
+            </div>
+          </div>
+          
+          <div class="contact-agent">
+            <h4>Contact Agent</h4>
+            <div class="agent-info">
+              <div class="agent-details">
+                <h5>BuildMax Properties</h5>
+                <p>Licensed Real Estate Agent</p>
+                <p><i class="fas fa-phone"></i> +234 813 889 8679</p>
+                <p><i class="fas fa-envelope"></i> buildmaxp@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact-actions">
+              <a href="tel:+2348138898679" class="btn btn-primary">
+                <i class="fas fa-phone"></i> Call Now
+              </a>
+              <a href="https://wa.me/2348138898679" class="btn btn-secondary" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+              </a>
+              <a href="mailto:buildmaxp@gmail.com" class="btn btn-outline">
+                <i class="fas fa-envelope"></i> Email
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <img src="images/logo-blackbg.png" alt="Build Max Properties Logo" class="footer-logo-image">
+            <div class="footer-logo-text">
+              <!-- <span class="logo-text">Build Max</span>
+              <span class="logo-subtitle">Properties</span> -->
+            </div>
+          </div>
+          <p>Your trusted partner in finding the perfect property. We specialize in premium real estate solutions across Nigeria.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/share/16iRSMs64y/?mibextid=wwXIfr" target="_blank">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://wa.me/2348138898679" target="_blank">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/build_maxltd?igsh=dTAzMmM1N3ZmejBo&utm_source=qr" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@buildmaxltd_?_t=ZS-8ygNUWWzo0d&_r=1" target="_blank">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="listings.html">Properties</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="listings.html">Property Sales</a></li>
+            <li><a href="valuation.html">Property Valuation</a></li>
+            <li><a href="management.html">Property Management</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <div class="contact-info">
+            <p>📍 Akobo, Ibadan, Nigeria.</p>
+            <p>📞 +234 813 889 8679</p>
+            <p>✉️ buildmaxp@gmail.com</p>
+            <p>🕒 Open 24hrs</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 BuildMax Properties. All rights reserved. | Licensed Real Estate Developing Agency | RC: 7343908</p>
+        <div class="footer-legal">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="listing.js"></script>
+</body>
+</html>

@@ -193,7 +193,6 @@ function handleContactForm(event) {
     return;
   }
   
-  // Simulate form submission (replace with actual submission logic)
   setTimeout(() => {
     console.log('Form submitted:', data);
     
